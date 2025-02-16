@@ -22,12 +22,10 @@ def plot_signal(title, file_name, flag):
     plt.savefig(file_name, dpi=300, bbox_inches='tight')
 
 
-# In the target variable (class), we chose to drop the unknown values
 df = pd.read_csv('data.csv')
 df = df[df['class'] != 8]
 print(df)
 
-# plotting our signal
 filtered_df = df[df['device_id'] == 'B0236F1F2D02C632']
 signal_data = filtered_df.iloc[:, 5:]
 
